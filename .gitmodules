@@ -1,3 +1,6 @@
 [submodule "nvim/bundle/neobundle.vim"]
 	path = nvim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = https://github.com/powerline/fonts
