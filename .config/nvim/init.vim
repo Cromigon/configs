@@ -1,8 +1,8 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
+" Author Niclas Björner <niclas@cromigon.se>
 
+" vim mode, no vi mode
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible " Be iMproved
 endif
 
 call plug#begin()
