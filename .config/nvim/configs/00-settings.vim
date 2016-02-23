@@ -1,5 +1,8 @@
 set splitright " vsplit will open the new split to the right
 
+let g:airline_powerline_fonts = 1 " Tell airline that I use poweline a powerline font
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Allow change of cursor shapes in neovim
+
 " Tab settings
 set scrolloff=3
 set expandtab
@@ -10,13 +13,43 @@ set smarttab
 " Folding
 set foldlevelstart=0
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-" Ignore gitcommit
-let g:ycm_filetype_blacklist = {
-     \ 'gitcommit': 1
-     \}
+" Cursorline
+set cursorline
+
+" Ignore and smart case
+set ignorecase
+set smartcase
+
+" Wildmenu completion
+set wildmenu
+set wildmode=list:longest,full
+set wildignore+=.git
+set wildignore+=*.pyc
+set wildignore+=*.DS_Store
+
+" Backup options
+set backup
+set writebackup
+
+set history=500
+
+set undofile
+set undolevels=512
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+set completeopt=menuone,noinsert,noselect,longest,preview
+
+" Config for changing cursors in both tmux and ourside (on INSERT MODE)
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " Autorun
 autocmd BufWritePre * :call TrimWhitespace() " Remove any trailing whitespaces
+autocmd CompleteDone * pclose!
 
