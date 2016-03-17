@@ -30,6 +30,9 @@ set wildignore+=*.DS_Store
 " Backup options
 set backup
 set writebackup
+" Set the backup dir to .config/nvim/vimtmp
+" So that we won't have $FILE~ all over our FS
+set backupdir=~/.config/nvim/vimtmp
 
 set history=500
 
