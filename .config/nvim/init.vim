@@ -27,6 +27,12 @@ Plug 'zchee/deoplete-jedi'                  " Jedi in deoplete for python comple
 Plug 'fatih/vim-go'                         " Go for vim
 Plug 'zchee/deoplete-go', {'do': 'make'}    " Go deoplete support
 Plug 'ervandew/supertab'                    " Supertab to make tab more powerful
+Plug 'tpope/vim-fugitive'                   " Fugitive is (apparantly) amazing
+Plug 'robbles/logstash.vim'                 " I do like logstash (not)
+Plug 'editorconfig/editorconfig-vim'
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugs/gocode/nvim/symlink.sh' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'                     " fzf is the future or fuzzy search!
 
 call plug#end()
 

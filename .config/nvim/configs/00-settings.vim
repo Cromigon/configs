@@ -41,7 +41,12 @@ set undolevels=512
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-set completeopt=menuone,noinsert,noselect,longest,preview
+" set completeopt=menuone,noinsert,noselect,longest,preview
+
+" Something Something for gocode
+let g:deoplete#sources#go#gocode_binary = '/home/prosten/git/go/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
 
 " Config for changing cursors in both tmux and ourside (on INSERT MODE)
 if exists('$TMUX')
