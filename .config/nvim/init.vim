@@ -33,6 +33,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugs/gocode/nvim/symlink.sh' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                     " fzf is the future or fuzzy search!
+Plug 'lambdatoast/elm.vim'                  " Elm beacuase frontend
 
 call plug#end()
 

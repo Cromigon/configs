@@ -58,6 +58,5 @@ else
 endif
 
 " Autorun
-autocmd BufWritePre * :call TrimWhitespace() " Remove any trailing whitespaces
 autocmd CompleteDone * pclose!
 
