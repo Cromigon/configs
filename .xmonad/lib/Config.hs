@@ -83,7 +83,7 @@ switchWorkspaceToWindow w = windows $ do
     tag <- W.currentTag
     W.focusWindow w . W.greedyView tag . W.focusWindow w
 
-workspaces' = ["\xf268", "\xf126", "\xf1bc", "\xf2c6", "\xf0e0", "\xf1c0", "7", "8", "9"]
+workspaces' = ["\xf268", "\xf126", "\xf198", "\xf1bc", "\xf0e0", "\xf1c0", "7", "8", "9"]
 
 myManageHook = composeAll
     [ className =? "MPlayer"          --> doFloat
@@ -210,14 +210,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 myLogHook :: D.Client -> PP
-myLogHook dbus = def 
+myLogHook dbus = def
     { ppOutput = dbusOutput dbus
     , ppCurrent = wrap ("%{u" ++ green ++ "} ") " %{-u}"
     , ppVisible = wrap ("%{u" ++ orange ++ "} ") " %{-u}"
-	, ppUrgent = wrap ("%{F" ++ red ++ "} ") " %{F-}"
-	, ppHidden = wrap " " " "
-	, ppWsSep = ""
-	, ppSep = " : "
+    , ppUrgent = wrap ("%{F" ++ red ++ "} ") " %{F-}"
+    , ppHidden = wrap " " " "
+    , ppWsSep = ""
+    , ppSep = " : "
     , ppTitle = shorten 40
     }
 
@@ -225,7 +225,7 @@ myLogHook dbus = def
 dbusOutput :: D.Client -> String -> IO ()
 dbusOutput dbus str = do
     let signal = (D.signal objectPath interfaceName memberName) {
-            D.signalBody = [D.toVariant $ UTF8.decodeString str] 
+            D.signalBody = [D.toVariant $ UTF8.decodeString str]
         }
     D.emit dbus signal
   where
@@ -236,11 +236,11 @@ dbusOutput dbus str = do
 myConfig = def
     { terminal = "termite"
     , layoutHook = myLayouts
-	, manageHook = placeHook (smart (0.5, 0.5))
+    , manageHook = placeHook (smart (0.5, 0.5))
                    <+> manageDocks
                    <+> myManageHook
                    <+> myManageHook'
-				   <+> manageHook def
+                   <+> manageHook def
     , handleEventHook = docksEventHook <+> minimizeEventHook <+> fullscreenEventHook
     , keys = myKeys
     -- Don't be stupid with focus
